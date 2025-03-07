@@ -18,7 +18,7 @@ SmartBoolArray& SmartBoolArray::operator=(SmartBoolArray&& other) noexcept {
 }
 
 bool SmartBoolArray::get(int index) const {
-	if (index >= size_) {
+	if (index >= size_ || index < 0) {
 		throw IndexOutOfBoundsException();
 	}
 	unsigned char ch = array_[index / 8];
@@ -30,7 +30,7 @@ bool SmartBoolArray::get(int index) const {
 }
 
 void SmartBoolArray::set(int index, bool value) {
-	if (index >= size_) {
+	if (index >= size_ || index < 0) {
 		throw IndexOutOfBoundsException();
 	}
 	unsigned char ch = array_[index / 8];
