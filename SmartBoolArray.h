@@ -51,6 +51,8 @@ public:
 
 	int getSize() const noexcept;
 
+	bool* toBoolArray() const;
+
 	friend std::ostream& operator<<(std::ostream& os, const SmartBoolArray& array);
 
 private:

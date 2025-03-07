@@ -51,6 +51,15 @@ int SmartBoolArray::getSize() const noexcept {
 	return size_;
 }
 
+bool *SmartBoolArray::toBoolArray() const {
+	bool* result = new bool[size_];
+	for (int i = 0; i < size_; ++i) {
+		result[i] = get(i);
+	}
+	return result;
+}
+
+
 void SmartBoolArray::swap(SmartBoolArray& other) noexcept {
 	std::swap(array_, other.array_);
 	std::swap(capacity_, other.capacity_);
